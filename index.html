@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quantum Media | كوانتوم ميديا</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -23,7 +23,6 @@
         }
     </script>
     <style>
-html,body{width:100%;max-width:100%;min-height:100vh;margin:0;padding:0;overflow-x:hidden;}*{box-sizing:border-box;}
         body {
             background-color: #020204;
             color: #f3f4f6;
@@ -56,10 +55,10 @@ html,body{width:100%;max-width:100%;min-height:100vh;margin:0;padding:0;overflow
 <body class="font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-white/10 selection:text-white">
 
     <!-- Ambient Glowing Background -->
-    <div id="ambient-glow" class="absolute top-0 left-1/2 -translate-x-1/2 w-[120vw] h-[300px] rounded-full opacity-25 blur-[150px] pointer-events-none transition-all duration-1000" style="background-color: var(--accent-color, #1ed760);"></div>
+    <div id="ambient-glow" class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[300px] rounded-full opacity-25 blur-[150px] pointer-events-none transition-all duration-1000" style="background-color: var(--accent-color, #1ed760);"></div>
 
     <!-- MAIN APP CONTAINER -->
-    <div class="w-screen min-h-screen px-3 sm:px-4 md:px-6 pt-6 pb-32 flex-1 flex flex-col relative z-10 overflow-x-hidden">
+    <div class="w-full max-w-[1440px] mx-auto px-3 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-6 sm:pt-10 pb-24 sm:pb-32 flex-1 flex flex-col relative z-10">
         
         <!-- HEADER -->
         <header class="flex justify-between items-center flex-wrap gap-4 mb-8 border-b border-white/5 pb-6">
@@ -102,22 +101,22 @@ html,body{width:100%;max-width:100%;min-height:100vh;margin:0;padding:0;overflow
         </div>
 
         <!-- MINI PLAYER FIXED BAR -->
-        <div id="mini-player" class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-6xl z-50 bg-[#08080c]/90 border border-white/10 backdrop-blur-2xl rounded-3xl px-6 py-4 flex items-center justify-between gap-6 shadow-2xl transition-all duration-300 hidden">
-            <div class="flex items-center gap-3.5 flex-1 min-w-0" onclick="switchView('studio')">
-                <div class="w-11 h-11 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center relative overflow-hidden group cursor-pointer shadow-lg">
+        <div id="mini-player" class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-1rem)] sm:w-[calc(100%-2rem)] max-w-6xl z-50 bg-[#08080c]/90 border border-white/10 backdrop-blur-2xl rounded-3xl px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-3 sm:gap-6 shadow-2xl transition-all duration-300 hidden">
+            <div class="flex items-center gap-2.5 sm:gap-3.5 flex-1 min-w-0" onclick="switchView('studio')">
+                <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center relative overflow-hidden group cursor-pointer shadow-lg shrink-0">
                     <img id="mini-cover" class="w-full h-full object-cover hidden referrerPolicy='no-referrer'">
-                    <div id="mini-placeholder-icon" class="flex items-center justify-center text-white"><i data-lucide="music" class="w-5 h-5"></i></div>
+                    <div id="mini-placeholder-icon" class="flex items-center justify-center text-white"><i data-lucide="music" class="w-4 h-4 sm:w-5 sm:h-5"></i></div>
                 </div>
                 <div class="cursor-pointer min-w-0">
-                    <h4 id="mini-title" class="text-xs font-bold text-white truncate"></h4>
-                    <p id="mini-artist" class="text-[10px] text-gray-400 mt-0.5 truncate"></p>
+                    <h4 id="mini-title" class="text-[11px] sm:text-xs font-bold text-white truncate"></h4>
+                    <p id="mini-artist" class="text-[9px] sm:text-[10px] text-gray-400 mt-0.5 truncate"></p>
                 </div>
             </div>
             
-            <div class="flex items-center gap-4">
-                <button onclick="playbackPrev()" class="text-gray-400 hover:text-white transition-all active:scale-90 p-1"><i data-lucide="skip-back" class="w-4 h-4"></i></button>
-                <button onclick="playbackToggle()" id="mini-btn-play" class="w-10 h-10 rounded-full flex items-center justify-center text-black transition-all active:scale-95 shadow-md"><i data-lucide="play" class="w-4 h-4 fill-black ml-0.5"></i></button>
-                <button onclick="playbackNext()" class="text-gray-400 hover:text-white transition-all active:scale-90 p-1"><i data-lucide="skip-forward" class="w-4 h-4"></i></button>
+            <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+                <button onclick="playbackPrev()" class="text-gray-400 hover:text-white transition-all active:scale-90 p-1"><i data-lucide="skip-back" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i></button>
+                <button onclick="playbackToggle()" id="mini-btn-play" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-black transition-all active:scale-95 shadow-md"><i data-lucide="play" class="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-black ml-0.5"></i></button>
+                <button onclick="playbackNext()" class="text-gray-400 hover:text-white transition-all active:scale-90 p-1"><i data-lucide="skip-forward" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i></button>
             </div>
         </div>
 
@@ -1090,7 +1089,7 @@ html,body{width:100%;max-width:100%;min-height:100vh;margin:0;padding:0;overflow
                 const spinClass = (item.id === "studio" && state.isPlaying) ? "animate-spin-slow" : "";
                 
                 return `
-                    <button onclick="switchView('${item.id}')" ${activeStyle} class="flex-1 flex items-center justify-center gap-2 py-3 px-5 rounded-2xl text-xs font-bold transition-all active:scale-[0.98] whitespace-nowrap cursor-pointer ${isActive ? 'text-white border border-white/5' : 'text-gray-400 hover:text-gray-200'}">
+                    <button onclick="switchView('${item.id}')" ${activeStyle} class="flex-1 flex items-center justify-center gap-2 py-3 px-5 rounded-2xl text-xs font-bold transition-all active:scale-[0.98] whitespace-nowrap cursor-pointer shrink-0 ${isActive ? 'text-white border border-white/5' : 'text-gray-400 hover:text-gray-200'}">
                         <i data-lucide="${item.icon}" class="w-4 h-4 ${spinClass}"></i>
                         <span>${item.label}</span>
                     </button>
