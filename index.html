@@ -55,10 +55,10 @@
 <body class="font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-white/10 selection:text-white">
 
     <!-- Ambient Glowing Background -->
-    <div id="ambient-glow" class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] rounded-full opacity-20 blur-[130px] pointer-events-none transition-all duration-1000" style="background-color: var(--accent-color, #1ed760);"></div>
+    <div id="ambient-glow" class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[300px] rounded-full opacity-25 blur-[150px] pointer-events-none transition-all duration-1000" style="background-color: var(--accent-color, #1ed760);"></div>
 
     <!-- MAIN APP CONTAINER -->
-    <div class="w-full max-w-5xl mx-auto px-4 pt-10 pb-32 flex-1 flex flex-col relative z-10">
+    <div class="w-full max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 xl:px-16 pt-10 pb-32 flex-1 flex flex-col relative z-10">
         
         <!-- HEADER -->
         <header class="flex justify-between items-center flex-wrap gap-4 mb-8 border-b border-white/5 pb-6">
@@ -101,7 +101,7 @@
         </div>
 
         <!-- MINI PLAYER FIXED BAR -->
-        <div id="mini-player" class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-4xl z-50 bg-[#08080c]/90 border border-white/10 backdrop-blur-2xl rounded-3xl px-6 py-4 flex items-center justify-between gap-6 shadow-2xl transition-all duration-300 hidden">
+        <div id="mini-player" class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-6xl z-50 bg-[#08080c]/90 border border-white/10 backdrop-blur-2xl rounded-3xl px-6 py-4 flex items-center justify-between gap-6 shadow-2xl transition-all duration-300 hidden">
             <div class="flex items-center gap-3.5 flex-1 min-w-0" onclick="switchView('studio')">
                 <div class="w-11 h-11 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center relative overflow-hidden group cursor-pointer shadow-lg">
                     <img id="mini-cover" class="w-full h-full object-cover hidden referrerPolicy='no-referrer'">
